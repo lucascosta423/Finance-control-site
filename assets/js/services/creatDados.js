@@ -1,19 +1,22 @@
 const baseUrl = "http://localhost:8080";
 
-function insertRowsInTable(data,variavel,id) {
+
+function insertRowsInTable(data,elementHtml) {
+    let row = "";
+
     data.forEach(element => {
-        variavel += `<tr>
+        row += `<tr>
         <td>${element.id}</td>
         <td>${element.title}</td>
         <td>${element.description}</td>
+        <td>${element.category.name}</td>
         <td>${element.incomeValue}</td>
         <td><a class="btn btn-primary">Atualizar</a></td>
         <td><a class="btn btn-danger">Deletar</a></td>
         </tr>`;
     });
-    id.innerHTML = variavel;
+    elementHtml.innerHTML = row;
 }
-
 async function getAllIncomes(rota) {
     try {
         const request = await axios.get(baseUrl + rota);

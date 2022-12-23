@@ -1,5 +1,3 @@
-
-
 async function addIncome(income = {}) {
     try {
         console.log(income);
@@ -16,13 +14,20 @@ async function addIncome(income = {}) {
 }
 
 document.getElementById("addIncome").addEventListener("click", async () => {
+
     const title = document.getElementById("title");
     const description = document.getElementById("description");
     const valueIncome = document.getElementById("valueIncome");
+    const categorylist = document.getElementById("category");
+    
+
+    let categoryOption = categorylist.options[categorylist.selectedIndex].value;
+
     let income = {
         title: title.value,
         description: description.value,
-        value: valueIncome.value
+        value: valueIncome.value,
+        categoryId: categoryOption
     }
     await addIncome(income);
 })
