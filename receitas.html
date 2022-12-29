@@ -15,110 +15,139 @@
         integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="assets/js/services/category.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="assets/css/receitas.css">
     <title>Receitas</title>
+    <style>
+        body{
+            display: flex;
+        }
+    </style>
 </head>
 <body>
-    <header class="d-flex flex-nowrap mb-4" id="navbar">
-        <div class="d-flex flex-row flex-shrink-0 p-3 text-bg-dark" style="width: 100vw;">        
+    
+    <header class="nav-left">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark nav-left" >
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <svg class="bi pe-none me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap" />
-                </svg>
-                <span class="fs-4">Finance-Home</span>
+              <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              <span class="fs-4">Finance Control</span>
             </a>
             <hr>
-            <ul class="nav nav-pills flex-row mb-auto align-items-center" style="margin-right: 30rem; height: 100%;">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link text-white" aria-current="page">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="/receitas.html" class="nav-link text-white">
-                        Receitas
-                    </a>
-                </li>
-                <li>
-                    <a href="/despesas.html" class="nav-link text-white">
-                        Despesas
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        Customers
-                    </a>
-                </li>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard.html" class="nav-link text-white">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="/receitas.html" class="nav-link text-white">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                  Receitas
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                  Despesas
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                  Customers
+                </a>
+              </li>
             </ul>
-
-            <div class="dropdown" id="perfilUser">
-            </div>
+            <hr>
         </div>
     </header>
 
-    <main class="container">
-        <aside class="d-flex">
-            <section class="newReceita">    
-                <h3>Adicionar nova receita</h3>
-                <div class="row">
-                    <form>
-                        <div class="form-group">
-                            <label for="title">Titulo</label>
-                            <input type="text" class="form-control" id="title" aria-describedby="titleHelp"
-                                placeholder="Informe aqui">
-                            <small id="titleHelp" class="form-text text-muted">Informe um título para a sua receita</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="valueIncome">Valor da receita</label>
-                            <input type="number" class="form-control" id="valueIncome" step="0.01" name="valueIncome"
-                                min="0.01">
-                        </div>
-                        <div class="form-group" style="margin-top: 1vh;">
-                            <label for="valueIncome">Selecione a Categoria</label>
+    <main>
 
-                            <select name="category" id="category" class="form-control" style="text-align: center;">
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Descrição</label>
-                            <textarea class="form-control" id="description" rows="3"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary" id="addIncome">Adicionar</button>
-                    </form>
-                </div>
-            </section>
+        <header>
+            <div class="dropdown" id="perfilUser"></div>
+        </header>
+        
+        <section class="newReceita">    
+            <h3>Adicionar nova receita</h3>
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Titulo</label>
+                        <input type="text" class="form-control" id="title" aria-describedby="titleHelp"
+                            placeholder="Informe aqui">
+                        <small id="titleHelp" class="form-text text-muted">Informe um título para a sua receita</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="valueIncome">Valor da receita</label>
+                        <input type="number" class="form-control" id="valueIncome" step="0.01" name="valueIncome"
+                            min="0.01">
+                    </div>
+                    <div class="form-group" style="margin-top: 1vh;">
+                        <label for="category">Selecione a Categoria</label>
 
-            <section class="back">
-                <h1>Lista De Receitas</h1>
-                <div class="table-responsive table-css">
-                    <table class="table table-striped table-hover" style="text-align: center;">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Income Value</th>
-                                <th colspan="2">Atualizar / Deletar</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        </tbody>
-                    </table>
+                        <select name="category" id="category" class="form-control" style="text-align: center;">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="addIncome">Adicionar</button>
+                </form>
+            </div>
+        </section>
+        
+        <section class="back">
+            <h1>Lista De Receitas</h1>
+            <div class="table-responsive table-css">
+                <table class="table table-striped table-hover" style="text-align: center;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Income Value</th>
+                            <th colspan="2">Atualizar / Deletar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="modal fade" id="atualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Atualizar Receita</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </section>
-        </aside>
+                <div class="modal-body" id="modal-creat">
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary">Atualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
     </main>
 
-    <script src="assets/js/services/creatDados.js"></script>
     <script src="assets/js/services/saveDados.js"></script>
-    <script src="assets/js/teste.js"></script>
-    <script  src="assets/js/receita.js"></script>
+    <script src="assets/js/perfilUser.js"></script>
+    <script src="assets/js/receita.js"></script>
 </body>
 </html>

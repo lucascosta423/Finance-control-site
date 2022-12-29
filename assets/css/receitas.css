@@ -1,10 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 80px auto;
+    background-color: aquamarine;
+}
+main header{
+    display: grid;
+    height: 70px;
+    background-color: rgb(43, 105, 105);
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-content: end;
+}
+main header div{
+    color: black;
+    margin-right: 1rem;
+}
+.nav-left{
+    height: 100vh;
+}
 .newReceita{
     background-color: rgb(240, 240, 240);
     width: 300px;
     padding: 1rem;
     border-radius: 1vw;
     height: 45vh;
-    margin-right: 1.5vw;
 }
 .back{
     border: 1px solid rgb(224, 213, 213);
@@ -29,6 +56,5 @@
 }
 .table-css::-webkit-scrollbar-thumb {
     background-color: blue;    /* color of the scroll thumb */
-    border-radius: 5px;       /* roundness of the scroll thumb */
-   
+    border-radius: 5px;       /* roundness of the scroll thumb */ 
   }

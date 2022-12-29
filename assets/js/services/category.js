@@ -1,5 +1,6 @@
 const categorylist = document.getElementById("category");
 
+
 axios.get(baseUrl + "/painel/category")
     .then((result) => {
         let option = "";
@@ -12,5 +13,7 @@ axios.get(baseUrl + "/painel/category")
         categorylist.innerHTML = option;
     }).catch((err) => {
         console.log(err);
-    });
+});
+
+//Moldel
 
