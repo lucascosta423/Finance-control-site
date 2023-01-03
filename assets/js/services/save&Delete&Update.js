@@ -69,17 +69,13 @@ function atualizarModal(valueUpdate){
             const valueIncomeModel  = document.getElementById("valueIncomeModel");
             const descriptionModel = document.getElementById("descriptionModel");
 
-           
-
-            
-            
             if(event.target){
                 const row = button.parentNode.parentNode;
                 //Insert dos values na model
                 titleModel.value = row.children[1].textContent;
                 descriptionModel.value = row.children[2].textContent;
                 //insert da option com a categoria atual
-                categoryModel.appendChild(new Option(row.children[3].textContent, row.children[0].textContent));
+                categoryModel.innerHTML = `<option value="${row.children[0].textContent}">${row.children[3].textContent}</option>`;
                 //insert das categorias na model
                 catgoryinsertModel.forEach(option => {
                     categoryModel.appendChild(new Option(option.textContent,option.value)).classList.add('categoryModel');
