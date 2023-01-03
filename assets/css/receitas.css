@@ -9,7 +9,7 @@ main{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 80px auto;
-    background-color: aquamarine;
+    background-color: rgb(219, 255, 243);
 }
 main header{
     display: grid;
@@ -31,7 +31,8 @@ main header div{
     width: 300px;
     padding: 1rem;
     border-radius: 1vw;
-    height: 45vh;
+    height: 35rem;
+    
 }
 .back{
     border: 1px solid rgb(224, 213, 213);
@@ -57,4 +58,7 @@ main header div{
 .table-css::-webkit-scrollbar-thumb {
     background-color: blue;    /* color of the scroll thumb */
     border-radius: 5px;       /* roundness of the scroll thumb */ 
-  }
+}
+.teste{
+    display: none;
+}

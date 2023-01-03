@@ -3,14 +3,11 @@ const categorylist = document.getElementById("category");
 
 axios.get(baseUrl + "/painel/category")
     .then((result) => {
-        let option = "";
-        // console.log(result)
+        
         result.data.forEach(element => {
-            option += `
-                <option value="${element.id}">${element.name}</option>
-            `;
+            categorylist.appendChild(new Option(element.name, element.id)).classList.add('categoryIncome')
         });
-        categorylist.innerHTML = option;
+        
     }).catch((err) => {
         console.log(err);
 });
