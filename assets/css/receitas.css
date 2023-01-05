@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-main{
-    width: 100vw;
+.container{
+    max-width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 80px auto;
-    background-color: rgb(219, 255, 243);
 }
 main header{
     display: grid;
@@ -32,22 +33,34 @@ main header div{
     padding: 1rem;
     border-radius: 1vw;
     height: 35rem;
+}
+#category #category:focus{
+    text-align-last: center;
     
 }
-.back{
-    border: 1px solid rgb(224, 213, 213);
-    padding: 0  0  0 1vw;
 
-}
 .table-css{
     width: 50vw;
     height: 50vh;
     overflow-x: hidden;
-    position: relative;
-    
 }
+.headerContainerData{
+    height: 10vh;
+}
+
 .thead-light{
     font-size: 1.2em;
+    position: absolute;
+    top: 9.5rem;
+}
+.thead-light tr{
+    display: flex;
+    padding: 0 0 0 0.8rem;
+}
+.thead-light tr th{
+    display: flex;
+    justify-content: center;
+    margin-right: 3.1rem;
 }
 #addIncome{
     margin-top: 1vh;
@@ -59,6 +72,6 @@ main header div{
     background-color: blue;    /* color of the scroll thumb */
     border-radius: 5px;       /* roundness of the scroll thumb */ 
 }
-.teste{
+.removerOption{
     display: none;
 }

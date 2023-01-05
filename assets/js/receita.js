@@ -29,16 +29,18 @@ async function getAllIncomes(rota) {
 
 function insertRowsInTable(data,elementHtml) {
     let row = "";
-
     data.forEach(element => {
         row += `<tr>
         <td>${element.id}</td>
         <td>${element.title}</td>
         <td>${element.description}</td>
         <td>${element.category.name}</td>
+        <td hidden>${element.category.id}</td>
         <td>${element.incomeValue}</td>
-        <td><button type="button" class="btn btn-primary updateAll" data-bs-toggle="modal" data-bs-target="#atualizar">Atualizar</button></td>
-        <td><button type="button" class="btn btn-danger deleteAll">Deletar</button></td>
+        <td>
+            <button type="button" class="btn btn-primary updateAll" data-bs-toggle="modal" data-bs-target="#atualizar">Atualizar</button>
+            <button type="button" class="btn btn-danger deleteAll">Deletar</button>
+        </td>
         </tr>`;
     });
     elementHtml.innerHTML = row;
@@ -50,7 +52,7 @@ function insertRowsInTable(data,elementHtml) {
     //Atualizar Receita
     const btnUpd = document.querySelectorAll(".updateAll");
     atualizarModal(btnUpd)
-        
+
 }
 
 
