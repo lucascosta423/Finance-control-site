@@ -1,9 +1,9 @@
 
 //Save
 
-async function addIncome(income = {}) {
+async function addIncome(dados = {},rota) {
     try {
-        const request = await axios.post(baseUrl + "/painel/income/save", income);
+        const request = await axios.post(baseUrl + `/painel/${rota}/save`, dados);
         if (request) {
             // console.log(request);
             alert("Receita cadastrada com sucesso!");
@@ -36,7 +36,7 @@ document.getElementById("addIncome").addEventListener("click", async () => {
         value: valueIncome.value,
         categoryId: categoryOption
     }
-    await addIncome(income);
+    await addIncome(income,"income");
 })
 
 //Delete

@@ -11,6 +11,7 @@ window.onload = async () => {
     }
 }
 
+
 async function getAllIncomes(rota) {
     try {
         const request = await axios.get(baseUrl + rota);
