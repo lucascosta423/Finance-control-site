@@ -45,16 +45,17 @@ function insertRowsInTable(data,elementHtml) {
         </tr>`;
     });
     elementHtml.innerHTML = row;
-    
+    console.log(data)
+    if(data.length > 5){
+        document.querySelector(".table-css").style.height = "35vh";
+    }
     //Deletar Receitas
     const btnDel = document.querySelectorAll(".deleteAll");
     deleteRowInTable(btnDel)
     
     //Atualizar Receita
     const btnUpd = document.querySelectorAll(".updateAll");
-    atualizarModal(btnUpd)
+    atualizarReceitasDespesas(btnUpd)
 
 }
-
-
 
