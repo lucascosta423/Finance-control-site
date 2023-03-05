@@ -13,7 +13,6 @@ function atualizarReceitasDespesas(btnUpdate){
             if(event.target){
                 const row = button.parentNode.parentNode;
                 //Insert dos values na model
-                console.log(row);
                 titleModel.value = row.children[1].textContent;
                 descriptionModel.value = row.children[2].textContent;
 
@@ -25,7 +24,7 @@ function atualizarReceitasDespesas(btnUpdate){
                     categoryModel.appendChild(new Option(option.textContent,option.value)).classList.add('categoryModel');
                 })
 
-                //remove da option com o mesmo value e name da row selecionada
+                //remove da selection a option com o mesmo value e name da row selecionada
                 document.querySelectorAll(".categoryModel").forEach(optionModel =>{
                     if(optionModel.textContent === row.children[3].textContent){
                         optionModel.classList.add('removerOption')
@@ -45,7 +44,6 @@ function atualizarReceitasDespesas(btnUpdate){
                     }
                     
                     if(event.target){
-                        console.log(parseFloat(valueIncomeModel.value));
                         let incomeUpdate = {
                             title: titleModel.value,
                             description: descriptionModel.value,
